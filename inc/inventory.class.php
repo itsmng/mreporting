@@ -295,7 +295,7 @@ class PluginMreportingInventory Extends PluginMreportingBaseclass {
       $result = $DB->query($query);
 
       while ($computer = $DB->fetchAssoc($result)) {
-         $percent = round($computer['Percent'], 2);
+         $percent = ($computer['Percent'] == null) ? '' : round($computer['Percent'], 2);
 
          $datas['datas'][__($computer['Age'], 'mreporting')." ($percent %)"] = $computer['Total'];
       }
@@ -388,7 +388,7 @@ class PluginMreportingInventory Extends PluginMreportingBaseclass {
 
         $datas = [];
       while ($computer = $DB->fetchAssoc($result)) {
-          $percent = round($computer['Percent'], 2);
+          $percent = ($computer['Percent'] == null) ? '' : round($computer['Percent'], 2);
          if ($computer['Total']) {
             $datas['datas'][$computer['OS']." ($percent %)"] = $computer['Total'];
          }
