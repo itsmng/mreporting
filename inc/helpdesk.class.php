@@ -698,7 +698,7 @@ class PluginMreportingHelpdesk Extends PluginMreportingBaseclass {
          foreach ($technicians as $technician) {
             $datas['datas'][$current_status][$technician['username']] = 0;
 
-            $fullname = trim($technician['fullname']);
+            $fullname = ($technician['fullname'] == null) ? '' : trim($technician['fullname']);
             if (!empty($fullname)) {
                $datas['labels2'][$technician['username']] = $fullname;
             } else {
