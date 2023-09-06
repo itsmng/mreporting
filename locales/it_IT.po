@@ -6,7 +6,7 @@
 # Pierfrancesco Passerini <p.passerini@gmail.com>, 2018
 msgid ""
 msgstr ""
-"Project-Id-Version: GLPI Plugin - MReporting\n"
+"Project-Id-Version: ITSMNG Plugin - MReporting\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-09 15:12+0000\n"
 "PO-Revision-Date: 2018-09-25 13:34+0000\n"
@@ -156,7 +156,7 @@ msgid ""
 "<p>GLPI reports are available.<br />\n"
 "You will find attached in this email.</p>\n"
 "\n"
-msgstr "\n<p>Ciao,</p>\n\n<p>i report GLPI sono disponibili.<br />\nLi trovi allegati alla presente e-mail.</p>\n\n"
+msgstr "\n<p>Ciao,</p>\n\n<p>i report ITSMNG sono disponibili.<br />\nLi trovi allegati alla presente e-mail.</p>\n\n"
 
 #: inc/notification.class.php:46 inc/pdf.class.php:15
 msgid "GLPI statistics reports"
@@ -169,7 +169,7 @@ msgid ""
 "GLPI reports are available.\n"
 "You will find attached in this email.\n"
 "\n"
-msgstr "Ciao,\n\ni report GLPI sono disponibili.\nLi trovi allegati alla presente e-mail.\n\n"
+msgstr "Ciao,\n\ni report ITSMNG sono disponibili.\nLi trovi allegati alla presente e-mail.\n\n"
 
 #: inc/notification.class.php:153
 msgid "Notification(s) sent !"

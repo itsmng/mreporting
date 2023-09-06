@@ -31,9 +31,9 @@
 define ('PLUGIN_MREPORTING_VERSION', '1.7.4');
 
 // Minimal GLPI version, inclusive
-define("PLUGIN_MREPORTING_MIN_GLPI", "9.5");
+define("PLUGIN_MREPORTING_MIN_ITSMNG", "9.5");
 // Maximum GLPI version, exclusive
-define("PLUGIN_MREPORTING_MAX_GLPI", "9.6");
+define("PLUGIN_MREPORTING_MAX_ITSMNG", "9.6");
 
 if (!defined('PLUGIN_MREPORTING_DIR')) {
    define("PLUGIN_MREPORTING_DIR", __DIR__ );
@@ -178,13 +178,13 @@ function plugin_version_mreporting() {
    return [
       'name'           => __('More Reporting', 'mreporting'),
       'version'        => PLUGIN_MREPORTING_VERSION,
-      'author'         => "<a href='http://www.teclib.com'>Teclib'</a> & <a href='http://www.infotel.com'>Infotel</a>",
-      'homepage'       => "https://github.com/pluginsGLPI/mreporting",
+      'author'         => "Teclib' & Infotel",
+      'homepage'       => "https://github.com/itsmng/mreporting",
       'license'        => 'GPLv2+',
       'requirements'   => [
          'glpi' => [
-            'min' => PLUGIN_MREPORTING_MIN_GLPI,
-            'max' => PLUGIN_MREPORTING_MAX_GLPI,
+            'min' => PLUGIN_MREPORTING_MIN_ITSMNG,
+            'max' => PLUGIN_MREPORTING_MAX_ITSMNG,
          ]
       ]
    ];

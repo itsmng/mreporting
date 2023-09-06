@@ -35,14 +35,14 @@ $LANG['plugin_mreporting']['Tag'] = [
    'title' => "Plugin TAG",
 
    'reportPieTag' => [
-      'title'    => "Nombre d'utilisation des TAG",
-      'desc'     => "Camembert",
-      'category' => "Pour tous les objets GLPi",
+      'title' => "Nombre d'utilisation des TAG",
+      'desc' => "Camembert",
+      'category' => "Pour tous les objets ITSMNG",
    ],
 
    'reportPieTagOnTicket' => [
-      'title'    => "Nombre d'utilisation des TAG",
-      'desc'     => "Camembert",
+      'title' => "Nombre d'utilisation des TAG",
+      'desc' => "Camembert",
       'category' => "Pour les tickets",
    ]
 

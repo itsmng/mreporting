@@ -37,7 +37,7 @@ $LANG['plugin_mreporting']['Tag'] = [
    'reportPieTag' => [
       'title'    => "Anzahl verwendeter Tags",
       'desc'     => "Pie",
-      'category' => "Für alle GLPi Objekte",
+      'category' => "Für alle ITSMNG Objekte",
    ],
 
    'reportPieTagOnTicket' => [
