@@ -469,9 +469,7 @@ class PluginMreportingHelpdesk Extends PluginMreportingBaseclass {
             $datas['labels2'][$label] = $label;
          }
       }
-
-      var_dump($datas);
-
+      
       return $datas;
    }
 
