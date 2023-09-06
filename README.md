@@ -1,16 +1,15 @@
-# More reporting GLPI plugin
+# More reporting ITSMNG plugin
 
-[![Join the chat at https://gitter.im/TECLIB/mreporting](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/TECLIB/mreporting?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![License](https://img.shields.io/github/license/itsmng/mreporting.svg?&label=License)](https://github.com/itsmng/mreporting/blob/main/LICENSE)
+[![Project Status: Active](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![GitHub release](https://img.shields.io/github/release/itsmng/mreporting.svg)](https://github.com/itsmng/mreporting/releases)
 
-![Dashboard](https://raw.githubusercontent.com/PluginsGLPI/mreporting/master/screenshots/dashboard.png)
+![Dashboard](https://raw.githubusercontent.com/itsmng/mreporting/main/screenshots/dashboard.png)
 
-* Download : https://github.com/PluginsGLPI/mreporting/releases
-* WIKI (Develop new reports) : https://github.com/PluginsGLPI/mreporting/wiki
+* Download : https://github.com/itsmng/mreporting/releases
+* WIKI (Develop new reports) : https://github.com/itsmng/mreporting/wiki
 
 ## Contributing
 
-* Open a ticket for each bug/feature so it can be discussed
-* Follow [development guidelines](http://glpi-developer-documentation.readthedocs.io/en/latest/plugins/index.html)
-* Refer to [GitFlow](http://git-flow.readthedocs.io/) process for branching
 * Work on a new branch on your own fork
 * Open a PR that will be reviewed by a developer
