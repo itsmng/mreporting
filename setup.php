@@ -178,7 +178,7 @@ function plugin_version_mreporting() {
    return [
       'name'           => __('More Reporting', 'mreporting'),
       'version'        => PLUGIN_MREPORTING_VERSION,
-      'author'         => "Teclib' & Infotel",
+      'author'         => "ITSM-NG Team & Infotel & Teclib",
       'homepage'       => "https://github.com/itsmng/mreporting",
       'license'        => 'GPLv2+',
       'requirements'   => [
