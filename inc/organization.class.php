@@ -31,7 +31,7 @@ class PluginMreportingOrganization extends PluginMreportingBaseclass
         ORDER BY glpi_requesttypes.name";
      $result = $DB->query($query);
 
-     while ($ticket = $DB->fetch_assoc($result)) {
+     while ($ticket = $DB->fetchAssoc($result)) {
         $datas['datas'][$ticket['name']] = $ticket['count'];
         $datas['labels2'][$ticket['name']] = $ticket['name'];
      }
