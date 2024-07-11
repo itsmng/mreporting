@@ -39,6 +39,14 @@ class PluginMreportingBaseclass {
              $where_entities_array,
              $where_entities_level;
 
+    protected $status,
+            $period_sort,
+            $period_sort_php,
+            $period_datetime,
+            $period_label,
+            $period_interval,
+            $sql_list_date;
+
    function __construct($config = []) {
       global $DB, $LANG;
 
