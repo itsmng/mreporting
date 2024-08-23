@@ -44,17 +44,18 @@ class PluginMreportingDashboard extends CommonDBTM {
 
       if (get_class($item) == 'Central'
          && PluginMreportingCommon::canAccessAtLeastOneReport($_SESSION['glpiactiveprofile']['id'])) {
-         echo "<div id='mreporting_central_dashboard'>";
+         echo "<div id='mreporting_central_dashboard' class='d-flex'>";
 
          echo "<script language='javascript' type='text/javascript'>
             function resizeIframe(obj) {
                obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+               obj.style.width = obj.contentWindow.document.body.scrollWidth + 'px';
             }
          </script>";
 
          echo "<iframe src='".Plugin::getWebDir('mreporting').
               "/ajax/dashboard.php?action=centralDashboard' ".
-              "frameborder='0' scrolling='no' onload='javascript:resizeIframe(this);'></iframe>";
+              "onload='resizeIframe(this)' frameborder='0' scrolling='no' style='position: relative; height: 100%; width: 100%;'";
          echo "</div>";
       }
       return true;
@@ -101,11 +102,9 @@ class PluginMreportingDashboard extends CommonDBTM {
 
       //echo "<button id='addReport_button' class='m_right'></button>";
       echo "<div class='m_dashboard_controls'>";
-      echo "<div class='add_report' id='addReport_button'><i class='fa fa-plus'></i></div>";
-      if (!empty($widgets)) {
-         echo "<span class='add_report_helptext'>".__("Add a report", 'mreporting').
-              " <i class='fa fa-arrow-right'></i></span>";
-      }
+      echo "<button class='btn btn-secondary' id='addReport_button' title='". __("Add a report", 'mreporting')."'>
+            <i class='fa fa-plus'></i>
+         </button>";
       echo "</div>";
       echo "<div id='addReport_dialog'>".$this->getFormForColumn()."</div>
       <script type='text/javascript'>
