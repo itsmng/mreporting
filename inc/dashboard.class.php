@@ -252,7 +252,7 @@ class PluginMreportingDashboard extends CommonDBTM {
                <button id='configWidget_button$rand_widget' class='m_right'></button>
                <span class='mreportingwidget-header-text'>
                   <a href='".Plugin::getWebDir('mreporting')."/front/graph.php?short_classname=".
-                  $short_classname."&amp;f_name=".$f_name."&amp;gtype=".$gtype."' target='_top'>
+                  $short_classname."&f_name=".$f_name."&gtype=".$gtype."' target='_top'>
                      &nbsp;$title
                   </a>
                </span>

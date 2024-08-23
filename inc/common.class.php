@@ -181,9 +181,9 @@ class PluginMreportingCommon extends CommonDBTM {
                      $des_func = "";
                   }
                   $url_graph  = "graph.php?short_classname=$scn".
-                     "&amp;f_name=$f_name&amp;gtype=$gtype";
+                     "&f_name=$f_name&gtype=$gtype";
                   $min_url_graph  = "front/graph.php?short_classname=$scn".
-                     "&amp;f_name=$f_name&amp;gtype=$gtype";
+                     "&f_name=$f_name&gtype=$gtype";
 
                   $reports[$classname]['title'] = $title;
                   $reports[$classname]['functions'][$i]['function'] = $f_name;
@@ -246,12 +246,10 @@ class PluginMreportingCommon extends CommonDBTM {
          return "";
       }
 
-      $js_onchange = $onchange ? " onchange='window.location.href=this.options[this.selectedIndex].value'" : "";
+      $js_onchange = $onchange ? "window.location.href=this.options[this.selectedIndex].value" : "";
 
-      $select  = "<select name='report' $js_onchange>";
-      $select .= "<option value='-1' selected>".Dropdown::EMPTY_VALUE."</option>";
-
-      foreach ($reports as $classname => $report) {
+      $values = [-1 => Dropdown::EMPTY_VALUE];
+      foreach ($reports as $report) {
          $graphs = [];
          foreach ($report['functions'] as $function) {
             if ($function['is_active']) {
@@ -261,7 +259,7 @@ class PluginMreportingCommon extends CommonDBTM {
 
          foreach ($graphs as $cat => $graph) {
             $remove = true;
-            foreach ($graph as $key => $value) {
+            foreach ($graph as $value) {
                if ($value['right']) {
                   $remove = false;
                }
@@ -272,10 +270,10 @@ class PluginMreportingCommon extends CommonDBTM {
          }
 
          if (count($graphs) > 0) {
-            $select.= "<optgroup label=\"".$report['title']."\">";
+            $values[$report['title']] = [];
             foreach ($graphs as $cat => $graph) {
                if (count($graph) > 0) {
-                  $select.= "<optgroup label=\"&nbsp;&nbsp;&nbsp;$cat\">";
+                  $values[$report['title']][$cat] = [];
 
                   usort(
                      $graph,
@@ -286,35 +284,32 @@ class PluginMreportingCommon extends CommonDBTM {
                      }
                   );
 
-                  foreach ($graph as $key => $value) {
+                  foreach ($graph as $value) {
                      if ($value['right']) {
                         if ($value['is_active']) {
-                           $comment = "";
-                           if (isset($value["desc"])) {
-                              $comment = $value["desc"];
-                           }
                            $option_value = $value["url_graph"];
                            if ($setIdInOptionsValues) {
                               $option_value = $value['id'];
                            }
                            $icon = self::getReportIcon($value['function']);
-                           $select .= "<option value='$option_value' title=\"".
-                                     Html::cleanInputText($comment).
-                                     "\">&nbsp;&nbsp;&nbsp;".$icon."&nbsp;".
-                                     $value["title"]."</option>";
+                           $values[$report['title']][$cat][$option_value] = $icon." ".$value["title"];
                         }
                      }
                   }
-
-                  $select.= "</optgroup>";
                }
             }
-            $select.= "</optgroup>";
          }
       }
-      $select.= "</select>";
+      ob_start();
+      renderTwigTemplate('macros/input.twig', [
+        'type'        => 'select',
+        'name'        => 'report',
+        'values'      => $values,
+        'hooks'  => ['change' => $js_onchange],
+        'noLib'  => true,
+      ]);
 
-      return $select;
+      return ob_get_clean();
    }
 
    /**
