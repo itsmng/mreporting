@@ -1653,7 +1653,7 @@ class PluginMreportingCommon extends CommonDBTM {
 
       echo "<td colspan='2' class='center'>";
       if ($has_selector) {
-         echo "<input type='submit' class='submit' name='submit' value=\"". _sx('button', 'Post') ."\">";
+         echo "<input type='submit' class='btn btn-sm btn-secondary' name='submit' value=\"". _sx('button', 'Post') ."\">";
       }
       $_SERVER['REQUEST_URI'] .= "&date1".$randname."=".$date1."&date2".$randname."=".$date2;
 
