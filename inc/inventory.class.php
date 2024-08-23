@@ -48,13 +48,14 @@ class PluginMreportingInventory Extends PluginMreportingBaseclass {
          $datas[$data['id']] = $data['completename'];
       }
 
-      $param = ['multiple' => true,
-                'display'  => true,
-                'size'     => count($selected_states),
-                'values'   => $selected_states];
-
       echo "<br /><b>".$label." : </b><br />";
-      Dropdown::showFromArray($field, $datas, $param);
+      renderTwigTemplate('macros/input.twig', [
+         'type'        => 'select',
+         'name'        => $field . '[]',
+         'values'      => $datas,
+         'value' => $selected_states,
+         'multiple'    => true,
+      ]);
    }
 
    static function getDefaultState() {
