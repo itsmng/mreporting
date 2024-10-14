@@ -26,7 +26,7 @@ jobs:
         run: |
           cd /home/runner/work/mreporting/
           cd mreporting && composer install --no-dev && cd ..
-          rm -r mreporting/tools mreporting/.git* mreporting/composer.*
+          rm -r mreporting/.git* mreporting/composer.*
           tar -zcvf mreporting-${{ github.ref_name }}.tgz mreporting
 
       - name: Upload release
