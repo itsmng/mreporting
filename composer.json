@@ -1,7 +1,7 @@
 {
     "require": {
         "php": "^7.2",
-        "masnathan/odtphp": "dev-teclib"
+        "sboden/odtphp": "^2.2"
     },
     "require-dev": {
         "glpi-project/tools": "^0.4"
@@ -12,11 +12,5 @@
             "php": "7.2.0"
         },
         "sort-packages": true
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url":  "https://github.com/teclib/odtphp/"
-        }
-    ]
+    }
 }
