@@ -28,7 +28,7 @@
  * -------------------------------------------------------------------------
  */
 
-define ('PLUGIN_MREPORTING_VERSION', '1.8.0');
+define ('PLUGIN_MREPORTING_VERSION', '1.8.1');
 
 // Minimal GLPI version, inclusive
 define("PLUGIN_MREPORTING_MIN_ITSMNG", "9.5");
